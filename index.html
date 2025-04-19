@@ -1,1 +1,227 @@
-<html> <body> <h1>Hello World</h1> </body> </html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目文档 | 我的项目</title>
+    <style>
+        :root {
+            --color-text-primary: #24292e;
+            --color-text-secondary: #586069;
+            --color-border-primary: #e1e4e8;
+            --color-bg-primary: #ffffff;
+            --color-bg-secondary: #f6f8fa;
+            --color-accent: #0366d6;
+            --color-accent-hover: #005cc5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+        }
+        
+        /* 侧边栏导航 */
+        .sidebar {
+            width: 260px;
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid var(--color-border-primary);
+        }
+        
+        .sidebar-header {
+            padding: 0 16px 16px;
+            border-bottom: 1px solid var(--color-border-primary);
+            margin-bottom: 16px;
+        }
+        
+        .sidebar-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .sidebar-nav {
+            padding: 0 16px;
+        }
+        
+        .sidebar-nav ul {
+            list-style: none;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 8px;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 6px 0;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        
+        .sidebar-nav a:hover {
+            color: var(--color-accent);
+        }
+        
+        .sidebar-nav .active {
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+        
+        /* 主内容区 */
+        .main-content {
+            flex: 1;
+            padding: 32px;
+            max-width: 800px;
+        }
+        
+        .markdown-body {
+            word-wrap: break-word;
+        }
+        
+        .markdown-body h1, 
+        .markdown-body h2 {
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid var(--color-border-primary);
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+        
+        .markdown-body h1 {
+            font-size: 2em;
+        }
+        
+        .markdown-body h2 {
+            font-size: 1.5em;
+        }
+        
+        .markdown-body p {
+            margin-bottom: 16px;
+        }
+        
+        .markdown-body a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+        
+        .markdown-body a:hover {
+            text-decoration: underline;
+        }
+        
+        .markdown-body code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            background-color: var(--color-bg-secondary);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 85%;
+        }
+        
+        .markdown-body pre {
+            background-color: var(--color-bg-secondary);
+            border-radius: 3px;
+            padding: 16px;
+            overflow: auto;
+            margin-bottom: 16px;
+        }
+        
+        .markdown-body pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                border-right: none;
+                border-bottom: 1px solid var(--color-border-primary);
+            }
+            
+            .main-content {
+                padding: 24px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边栏导航 -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="sidebar-title">项目文档</h1>
+            </div>
+            <div class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">快速开始</a></li>
+                    <li><a href="#">安装指南</a></li>
+                    <li><a href="#">使用教程</a></li>
+                    <li><a href="#">API参考</a></li>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">贡献指南</a></li>
+                    <li><a href="#">版本历史</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <article class="markdown-body">
+                <h1>欢迎来到项目文档</h1>
+                
+                <p>这里是项目的官方文档，包含使用指南、API参考和其他开发资源。</p>
+                
+                <h2>快速开始</h2>
+                
+                <p>要在项目中使用本库，请先安装：</p>
+                
+                <pre><code>npm install my-project</code></pre>
+                
+                <p>然后导入并使用：</p>
+                
+                <pre><code>import { myFunction } from 'my-project';
+
+// 使用示例
+myFunction();</code></pre>
+                
+                <h2>功能特性</h2>
+                
+                <ul>
+                    <li>功能一：详细描述</li>
+                    <li>功能二：详细描述</li>
+                    <li>功能三：详细描述</li>
+                </ul>
+                
+                <h2>支持</h2>
+                
+                <p>如果您遇到任何问题或有任何疑问，请<a href="#">提交issue</a>或<a href="#">联系我们</a>。</p>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
